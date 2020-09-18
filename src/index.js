@@ -173,12 +173,12 @@ app.post("/multiply", function (req,res){
 });
 
 //DIVISION
-app.get("/division", function(req, res) {
+app.get("/divide", function(req, res) {
   let reqPath = path.join(__dirname , '..', 'views','divide.html');
   res.sendFile(reqPath);
 });
 
-app.post("/division", function (req,res){
+app.post("/divide", function (req,res){
     let number1 = Number(req.body.num1);
     let number2 = Number(req.body.num2);
     let flag = 0;
@@ -222,10 +222,10 @@ app.post("/division", function (req,res){
 
 // here
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-// if(!module.parent){
-//   app.listen(process.env.PORT, () =>
-//     console.log(`Example app listening on port ${process.env.PORT}!`),
-//   );
-// }
+// app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+if(!module.parent){
+  app.listen(process.env.PORT, () =>
+    console.log(`Example app listening on port ${process.env.PORT}!`),
+  );
+}
 module.exports = app;
